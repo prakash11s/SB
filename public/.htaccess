@@ -1,0 +1,8 @@
+Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
+
+    # Removing the www prefix from domain URLs
+    RewriteCond %{HTTP_HOST} ^www\.
+    RewriteRule ^(.*)$ https://soulbusinessapp.com.br/$1 [R=301,L]
